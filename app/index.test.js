@@ -6,53 +6,6 @@ import {
   tallyGrades,
 } from ".";
 
-describe("assigns letter grades based on a standard 10-point scale", () => {
-  it("assigns 'A' for a scores between 90-100", () => {
-    const inputs = [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100];
-    const expected = "A";
-
-    inputs.forEach((input) => {
-      expect(assignLetterGrade(input)).toBe(expected);
-    });
-  });
-
-  it("assigns 'B' for a scores between 80-89", () => {
-    const inputs = [80, 81, 82, 83, 84, 85, 86, 87, 88, 89];
-    const expected = "B";
-
-    inputs.forEach((input) => {
-      expect(assignLetterGrade(input)).toBe(expected);
-    });
-  });
-
-  it("assigns 'C' for scores between 70-79", () => {
-    const inputs = Array.from({ length: 10 }, (_, i) => i + 70);
-    const expected = "C";
-
-    inputs.forEach((input) => {
-      expect(assignLetterGrade(input)).toBe(expected);
-    });
-  });
-
-  it("assigns 'D' for a scores between 60-69", () => {
-    const inputs = Array.from({ length: 10 }, (_, i) => i + 60);
-    const expected = "D";
-
-    inputs.forEach((input) => {
-      expect(assignLetterGrade(input)).toBe(expected);
-    });
-  });
-
-  it("assigns 'F' for a scores below 60", () => {
-    const inputs = Array.from({ length: 60 }, (_, i) => i);
-    const expected = "F";
-
-    inputs.forEach((input) => {
-      expect(assignLetterGrade(input)).toBe(expected);
-    });
-  });
-});
-
 describe("tallyGrades", () => {
   it("tallies the number of grades for students in a class", () => {
     const input = [
